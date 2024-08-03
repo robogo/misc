@@ -31,7 +31,7 @@ def compare(x, y):
         return 1
     if (x.name in y.won):
         return -1
-    return 0
+    return ord(y.name) - ord(x.name)
 
 def rank(results):    
     teams = {}
@@ -65,5 +65,5 @@ for i in range(0, 10):
             results += "="
             results += str(random.randint(0, 16)) + ":" + str(random.randint(0, 16))
     print(results)
-    print([t.name for t in rank(results)])
+    print("".join([t.name for t in rank(results)][:3]))
 # results = "A:B=1:2 A:C=1:2 A:D=1:2 A:E=1:2 B:C=1:2 B:D=1:2 B:E=1:2 C:D=1:2 C:E=1:2 D:E=1:2"
